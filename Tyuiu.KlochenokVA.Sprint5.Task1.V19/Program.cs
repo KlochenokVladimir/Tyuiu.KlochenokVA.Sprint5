@@ -19,8 +19,8 @@ namespace Tyuiu.KlochenokVA.Sprint5.Task1.V19
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
             Console.WriteLine("* Дана функция F(x) = (sin(x) + 2) / (3x + 0.5) - 2cos(x)              *");
             Console.WriteLine("* (произвести табулирование) на заданном диапазоне [-5; 5] с шагом 1.    *");
-            Console.WriteLine("* При х = -3/2, значение функции не определено. Результат сохранить в   *");
-            Console.WriteLine("* текстовый файл OutPutFileTask1.txt и вывести на консоль в таблицу.     *");
+            Console.WriteLine("* Результат сохранить в текстовый файл OutPutFileTask1.txt и вывести     *");
+            Console.WriteLine("* на консоль в таблицу. Значения округлить до двух знаков после запятой. *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
@@ -38,16 +38,6 @@ namespace Tyuiu.KlochenokVA.Sprint5.Task1.V19
             
             Console.WriteLine("Файл: " + res);
             Console.WriteLine("Создан!");
-            
-            Console.WriteLine("+----------+----------+");
-            Console.WriteLine("|    X     |   f(x)   |");
-            Console.WriteLine("+----------+----------+");
-            for (int x = startValue; x <= stopValue; x++)
-            {
-                Console.WriteLine("|{0,5:d}     |  {1,5:f2}   |", x, ds.GetMassFunction(x));
-            }
-            Console.WriteLine("+----------+----------+");
-            
             Console.ReadKey();
         }
     }

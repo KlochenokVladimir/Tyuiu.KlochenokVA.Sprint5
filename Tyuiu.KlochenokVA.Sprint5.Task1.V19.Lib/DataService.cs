@@ -1,4 +1,5 @@
-﻿using tyuiu.cources.programming.interfaces.Sprint5;
+﻿using System.Globalization;
+using tyuiu.cources.programming.interfaces.Sprint5;
 
 namespace Tyuiu.KlochenokVA.Sprint5.Task1.V19.Lib
 {
@@ -20,7 +21,7 @@ namespace Tyuiu.KlochenokVA.Sprint5.Task1.V19.Lib
             for (int x = startValue; x <= stopValue; x++)
             {
                 y = GetMassFunction(x);
-                strY = Convert.ToString(y);
+                strY = y.ToString("0.##", CultureInfo.InvariantCulture).Replace('.', ',');
                 
                 if (x != stopValue)
                 {
@@ -37,9 +38,9 @@ namespace Tyuiu.KlochenokVA.Sprint5.Task1.V19.Lib
         public double GetMassFunction(int x)
         {
             double y;
-            if (x == -3)
+            if (x == 0)
             {
-                y = 0;
+                y = 4;
             }
             else
             {
