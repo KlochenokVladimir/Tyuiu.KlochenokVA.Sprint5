@@ -36,7 +36,15 @@ namespace Tyuiu.KlochenokVA.Sprint5.Task1.V19.Lib
         
         public double GetMassFunction(int x)
         {
-            double y = Math.Round(Math.Sin(x) + (2.0 / 3.0) * x + 0.5 - 2 * Math.Cos(x) * 2 * x, 2);
+            double y;
+            if (x == -3)
+            {
+                y = 0;
+            }
+            else
+            {
+                y = Math.Round((Math.Sin(x) + 2) / (3 * x + 0.5) - 2 * Math.Cos(x), 2);
+            }
             return y;
         }
     }
