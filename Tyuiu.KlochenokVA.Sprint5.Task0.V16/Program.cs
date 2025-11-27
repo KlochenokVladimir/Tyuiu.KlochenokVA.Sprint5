@@ -8,13 +8,13 @@ namespace Tyuiu.KlochenokVA.Sprint5.Task0.V16
         {
             DataService ds = new DataService();
             
-            Console.Title = "Спринт #5 | Выполнила: Клоченок В. А. | ИИПб-24-2";
+            Console.Title = "Спринт #5 | Выполнил: Клоченок В. А. | ИСПб-25-1";
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #5                                                               *");
             Console.WriteLine("* Тема: Класс File. Запись данных в текстовый файл                       *");
             Console.WriteLine("* Задание #0                                                              *");
             Console.WriteLine("* Вариант #16                                                             *");
-            Console.WriteLine("* Выполнила: Клоченок Виктория Андреевна | ИИПб-24-2                     *");
+            Console.WriteLine("* Выполнил: Клоченок Владимир Алексеевич | ИСПб-25-1                     *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
             Console.WriteLine("* Дано выражение y(x) = (2x² - 1) / √(x² - 2)                           *");
