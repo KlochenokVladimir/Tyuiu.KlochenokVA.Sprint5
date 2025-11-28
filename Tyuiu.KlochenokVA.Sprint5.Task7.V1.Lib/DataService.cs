@@ -1,6 +1,8 @@
-﻿namespace Tyuiu.KlochenokVA.Sprint5.Task7.V1.Lib
+﻿using tyuiu.cources.programming.interfaces.Sprint5;
+
+namespace Tyuiu.KlochenokVA.Sprint5.Task7.V1.Lib
 {
-    public class DataService
+    public class DataService : ISprint5Task7V1
     {
         public string LoadDataAndSave(string path)
         {
