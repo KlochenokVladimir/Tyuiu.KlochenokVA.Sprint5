@@ -18,7 +18,7 @@ namespace Tyuiu.KlochenokVA.Sprint5.Task6.V15
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
             Console.WriteLine("* Дан файл С:\\DataSprint5\\InPutDataFileTask6V15.txt                     *");
-            Console.WriteLine("* Найти количество цифр в заданной строке.                               *");
+            Console.WriteLine("* Найти количество русских слов в заданной строке.                       *");
             Console.WriteLine("* Полученный результат вывести на консоль.                               *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
@@ -34,7 +34,7 @@ namespace Tyuiu.KlochenokVA.Sprint5.Task6.V15
             try
             {
                 int res = ds.LoadFromDataFile(path);
-                Console.WriteLine($"Количество цифр в файле = {res}");
+                Console.WriteLine($"Количество русских слов = {res}");
             }
             catch (FileNotFoundException ex)
             {

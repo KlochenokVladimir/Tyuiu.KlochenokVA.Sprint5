@@ -11,23 +11,23 @@ namespace Tyuiu.KlochenokVA.Sprint5.Task6.V15.Test
             DataService ds = new DataService();
 
             string path = Path.Combine(Path.GetTempPath(), "InPutDataFileTask6V15.txt");
-            File.WriteAllText(path, "abc123def456");
+            File.WriteAllText(path, "This просто пример string на русском языке.");
 
-            int expected = 6;
+            int expected = 5;
             int actual = ds.LoadFromDataFile(path);
 
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void ValidCountDigits()
+        public void ValidCountRussianWords()
         {
             DataService ds = new DataService();
 
             string path = Path.Combine(Path.GetTempPath(), "testfile.txt");
-            File.WriteAllText(path, "Hello123World456!");
+            File.WriteAllText(path, "Привет мир hello world");
 
-            int expected = 6;
+            int expected = 2;
             int actual = ds.LoadFromDataFile(path);
 
             Assert.AreEqual(expected, actual);

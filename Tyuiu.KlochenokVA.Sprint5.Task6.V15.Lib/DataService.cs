@@ -12,17 +12,29 @@ namespace Tyuiu.KlochenokVA.Sprint5.Task6.V15.Lib
             }
 
             string content = File.ReadAllText(path);
-            int count = 0;
+            string[] words = content.Split(new char[] { ' ', '\n', '\r', '\t', '.', ',', '!', '?', ';', ':' }, StringSplitOptions.RemoveEmptyEntries);
 
-            foreach (char c in content)
+            int russianWordsCount = 0;
+
+            foreach (string word in words)
             {
-                if (char.IsDigit(c))
+                bool isRussianWord = false;
+                foreach (char c in word)
                 {
-                    count++;
+                    if ((c >= 'а' && c <= 'я') || (c >= 'А' && c <= 'Я') || c == 'ё' || c == 'Ё')
+                    {
+                        isRussianWord = true;
+                        break;
+                    }
+                }
+
+                if (isRussianWord)
+                {
+                    russianWordsCount++;
                 }
             }
 
-            return count;
+            return russianWordsCount;
         }
     }
 }
