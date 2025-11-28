@@ -1,4 +1,5 @@
-﻿using tyuiu.cources.programming.interfaces.Sprint5;
+﻿using System.Globalization;
+using tyuiu.cources.programming.interfaces.Sprint5;
 
 namespace Tyuiu.KlochenokVA.Sprint5.Task4.V6.Lib
 {
@@ -12,7 +13,7 @@ namespace Tyuiu.KlochenokVA.Sprint5.Task4.V6.Lib
             }
 
             string strX = File.ReadAllText(path);
-            double x = Convert.ToDouble(strX);
+            double x = Convert.ToDouble(strX, CultureInfo.InvariantCulture);
             double res = Math.Round((1.0 / Math.Cos(x)) + 2.2 * Math.Pow(x, 2), 3);
             return res;
         }
