@@ -18,8 +18,8 @@ namespace Tyuiu.KlochenokVA.Sprint5.Task7.V1
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
             Console.WriteLine("* Дан файл С:\\DataSprint5\\InPutDataFileTask7V1.txt                      *");
-            Console.WriteLine("* Удалить все цифры из файла. Полученный результат сохранить в файл      *");
-            Console.WriteLine("* OutPutDataFileTask7V1.txt.                                              *");
+            Console.WriteLine("* в котором есть набор символьных данных. Удалить все цифры из файла.     *");
+            Console.WriteLine("* Полученный результат сохранить в файл OutPutDataFileTask7V1.txt.        *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
@@ -31,25 +31,9 @@ namespace Tyuiu.KlochenokVA.Sprint5.Task7.V1
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
 
-            try
-            {
-                string res = ds.LoadDataAndSave(path);
-                Console.WriteLine("Файл: " + res);
-                Console.WriteLine("Создан!");
-
-                string result = File.ReadAllText(res);
-                Console.WriteLine("Результат после удаления цифр:");
-                Console.WriteLine(result);
-            }
-            catch (FileNotFoundException ex)
-            {
-                Console.WriteLine("Ошибка: " + ex.Message);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Произошла ошибка: " + ex.Message);
-            }
-
+            string res = ds.LoadDataAndSave(path);
+            Console.WriteLine("Файл: " + res);
+            Console.WriteLine("Создан!");
             Console.ReadKey();
         }
     }
