@@ -1,6 +1,8 @@
-﻿namespace Tyuiu.KlochenokVA.Sprint5.Task3.V24.Lib
+﻿using tyuiu.cources.programming.interfaces.Sprint5;
+
+namespace Tyuiu.KlochenokVA.Sprint5.Task3.V24.Lib
 {
-    public class DataService
+    public class DataService : ISprint5Task3V24
     {
         public string SaveToFileTextData(int x)
         {
