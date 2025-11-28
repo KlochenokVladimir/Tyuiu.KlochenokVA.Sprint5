@@ -4,6 +4,11 @@
     {
         public string LoadDataAndSave(string path)
         {
+            if (!File.Exists(path))
+            {
+                throw new FileNotFoundException($"Файл не найден: {path}");
+            }
+
             string content = File.ReadAllText(path);
             string result = "";
 

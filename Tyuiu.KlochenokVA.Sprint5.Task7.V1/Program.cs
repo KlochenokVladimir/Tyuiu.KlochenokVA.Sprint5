@@ -17,26 +17,38 @@ namespace Tyuiu.KlochenokVA.Sprint5.Task7.V1
             Console.WriteLine("* Выполнил: Клоченок Владимир Алексеевич | ИСПб-25-1                     *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
-            Console.WriteLine("* Дан файл InPutDataFileTask7V1.txt                                      *");
+            Console.WriteLine("* Дан файл С:\\DataSprint5\\InPutDataFileTask7V1.txt                      *");
             Console.WriteLine("* Удалить все цифры из файла. Полученный результат сохранить в файл      *");
             Console.WriteLine("* OutPutDataFileTask7V1.txt.                                              *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
-            string path = Path.Combine(Path.GetTempPath(), "InPutDataFileTask7V1.txt");
-
-            File.WriteAllText(path, "123 Привет, это тестовая строка 456.");
-
+            string path = @"C:\DataSprint5\InPutDataFileTask7V1.txt";
             Console.WriteLine("Данные находятся в файле: " + path);
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
 
-            string res = ds.LoadDataAndSave(path);
-            Console.WriteLine("Файл: " + res);
-            Console.WriteLine("Создан!");
+            try
+            {
+                string res = ds.LoadDataAndSave(path);
+                Console.WriteLine("Файл: " + res);
+                Console.WriteLine("Создан!");
+
+                string result = File.ReadAllText(res);
+                Console.WriteLine("Результат после удаления цифр:");
+                Console.WriteLine(result);
+            }
+            catch (FileNotFoundException ex)
+            {
+                Console.WriteLine("Ошибка: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Произошла ошибка: " + ex.Message);
+            }
 
             Console.ReadKey();
         }
