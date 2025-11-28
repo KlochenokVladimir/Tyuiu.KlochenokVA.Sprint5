@@ -22,6 +22,12 @@ namespace Tyuiu.KlochenokVA.Sprint5.Task7.V1.Lib
                 }
             }
 
+            result = result.Replace("  ", " ").Trim();
+            if (result.EndsWith(" ."))
+            {
+                result = result.Substring(0, result.Length - 2);
+            }
+
             string outputPath = Path.Combine(Path.GetTempPath(), "OutPutDataFileTask7V1.txt");
             File.WriteAllText(outputPath, result);
 
