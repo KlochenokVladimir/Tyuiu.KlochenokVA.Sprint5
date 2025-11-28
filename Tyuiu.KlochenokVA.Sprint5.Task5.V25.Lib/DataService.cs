@@ -16,18 +16,22 @@ namespace Tyuiu.KlochenokVA.Sprint5.Task5.V25.Lib
             string[] values = content.Split(new char[] { ' ', '\n', '\r', '\t', ';', ',' }, StringSplitOptions.RemoveEmptyEntries);
 
             double product = 1.0;
-            bool hasNumbers = false;
+            bool hasRealNumbers = false;
 
             foreach (string value in values)
             {
                 if (double.TryParse(value.Replace(',', '.'), NumberStyles.Float, CultureInfo.InvariantCulture, out double number))
                 {
-                    product *= number;
-                    hasNumbers = true;
+                    
+                    if (number != Math.Floor(number))
+                    {
+                        product *= number;
+                        hasRealNumbers = true;
+                    }
                 }
             }
 
-            if (!hasNumbers)
+            if (!hasRealNumbers)
             {
                 return 0;
             }
