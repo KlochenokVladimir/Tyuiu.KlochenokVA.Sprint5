@@ -25,6 +25,9 @@ namespace Tyuiu.KlochenokVA.Sprint5.Task4.V6
             Console.WriteLine("***************************************************************************");
 
             string path = Path.Combine(Path.GetTempPath(), "InPutDataFileTask4V6.txt");
+
+            File.WriteAllText(path, "1.5");
+
             Console.WriteLine("Данные находятся в файле: " + path);
 
             Console.WriteLine("***************************************************************************");

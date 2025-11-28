@@ -6,6 +6,11 @@ namespace Tyuiu.KlochenokVA.Sprint5.Task4.V6.Lib
     {
         public double LoadFromDataFile(string path)
         {
+            if (!File.Exists(path))
+            {
+                throw new FileNotFoundException($"Файл не найден: {path}");
+            }
+
             string strX = File.ReadAllText(path);
             double x = Convert.ToDouble(strX);
             double res = Math.Round((1.0 / Math.Cos(x)) + 2.2 * Math.Pow(x, 2), 3);
