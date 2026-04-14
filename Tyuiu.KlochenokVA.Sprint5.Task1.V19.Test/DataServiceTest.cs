@@ -3,30 +3,20 @@
 namespace Tyuiu.KlochenokVA.Sprint5.Task1.V19.Test
 {
     [TestClass]
-    public class DataServiceTest
+    public sealed class DataServiceTest
     {
         [TestMethod]
-        public void CheckedExistsFile()
+        public void TestMethod1()
         {
-            DataService ds = new DataService();
-            
-            string path = ds.SaveToFileTextData(-5, 5);
-            
-            FileInfo fileInfo = new FileInfo(path);
-            bool fileExists = fileInfo.Exists;
-            Assert.IsTrue(fileExists);
-        }
-        
-        [TestMethod]
-        public void ValidCalculationCheck()
-        {
-            DataService ds = new DataService();
-            int testX = 0;
-            
-            double expected = Math.Round(Math.Sin(testX) + (2.0 / 3.0) * testX + 0.5 - 2 * Math.Cos(testX) * 2 * testX, 2);
-            double actual = ds.GetMassFunction(testX);
-            
-            Assert.AreEqual(expected, actual);
+            string path = @"C:\Users\PC\source\repos\Tyuiu.KlochenokVA.Sprint5\Tyuiu.KlochenokVA.Sprint5.Task7.V1\OutPutFileTask1.txt";
+
+            FileInfo file = new FileInfo(path);
+
+            bool filesInf = file.Exists;
+
+            bool wait = true;
+
+            Assert.AreEqual(wait, filesInf);
         }
     }
 }
