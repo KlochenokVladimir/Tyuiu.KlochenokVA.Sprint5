@@ -1,4 +1,5 @@
-﻿using tyuiu.cources.programming.interfaces.Sprint5;
+﻿using System.Text.RegularExpressions;
+using tyuiu.cources.programming.interfaces.Sprint5;
 
 namespace Tyuiu.KlochenokVA.Sprint5.Task7.V1.Lib
 {
@@ -6,21 +7,24 @@ namespace Tyuiu.KlochenokVA.Sprint5.Task7.V1.Lib
     {
         public string LoadDataAndSave(string path)
         {
-            string content = File.ReadAllText(path);
-            string result = "";
+            string pathSaveFile = @"C:\Users\PC\source\repos\Tyuiu.KlochenokVA.Sprint5\Tyuiu.KlochenokVA.Sprint5.Task7.V1\bin\Debug\net8.0\OutPutDataFileTask7V1.txt";
 
-            foreach (char c in content)
+            if (!File.Exists(path))
             {
-                if (!char.IsDigit(c))
-                {
-                    result += c;
-                }
+                throw new FileNotFoundException("Файл не найден.", path);
             }
 
-            string outputPath = Path.Combine(Path.GetTempPath(), "OutPutDataFileTask7V1.txt");
-            File.WriteAllText(outputPath, result);
+            string data = File.ReadAllText(path);
 
-            return outputPath;
+            data = Regex.Replace(data, @"\d", "");
+
+            data = data.Replace(".", "");
+
+            string outpath = Path.GetTempFileName();
+
+            File.WriteAllText(outpath, data);
+
+            return outpath;
         }
     }
 }

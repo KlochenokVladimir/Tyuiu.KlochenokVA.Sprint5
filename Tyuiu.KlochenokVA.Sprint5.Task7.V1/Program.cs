@@ -25,16 +25,20 @@ namespace Tyuiu.KlochenokVA.Sprint5.Task7.V1
             Console.WriteLine("***************************************************************************");
 
             string path = @"C:\DataSprint5\InPutDataFileTask7V1.txt";
-            Console.WriteLine("Данные находятся в файле: " + path);
+            Console.WriteLine("Исходные данные находятся в файле: " + path);
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
 
-            string res = ds.LoadDataAndSave(path);
-            Console.WriteLine("Файл: " + res);
-            Console.WriteLine("Создан!");
+            string pathSaveFile = @"C:\DataSprint5\OutPutDataFileTask7V1.txt";
+            Console.WriteLine("Конечные данные находятся в файле: " + pathSaveFile);
+
+
+
+
             Console.ReadKey();
+
         }
     }
 }
